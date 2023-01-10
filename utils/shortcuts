@@ -1,0 +1,28 @@
+""" Some useful functions """
+import os
+
+def path_converter(path):
+    """ Convert windows path to python-compatible path """
+    pass
+    """   path.replace('\\', '/')
+ is not working """
+
+def get_parent_path(user='montruth'):
+    """
+    GET_PARENT_PATH returns the parent path until the username folder. Python compatible path.
+    OPTIONAL: user: str username
+    """
+    current_path = os.getcwd()
+    parts = current_path.split('\\')
+    parts_to_join = parts[:parts.index(user)+1]
+    parent_folder = '/'.join(parts_to_join)
+    return parent_folder
+
+#print(get_parent_path())
+
+
+""" Experiment-specific functions"""
+
+#TODO: extract foldering from experiment name
+def parse_path_from_experiment_name(experiment_name):
+    pass
